@@ -4,12 +4,12 @@ import 'font_families.dart';
 
 class DefaultTheme {
   static final _textTheme = TextTheme(
-    titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, fontFamily: FontFamilies.titilliumWeb),
-    titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: FontFamilies.titilliumWeb),
-    titleSmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: FontFamilies.titilliumWeb),
-    bodyLarge: TextStyle(fontSize: 16.0, fontFamily: FontFamilies.titilliumWeb),
-    bodyMedium: TextStyle(fontFamily: FontFamilies.titilliumWeb, fontSize: 13),
-    bodySmall: TextStyle(fontFamily: FontFamilies.titilliumWeb, fontSize: 12),
+    titleLarge: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, fontFamily: FontFamilies.exo2),
+    titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: FontFamilies.exo2),
+    titleSmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, fontFamily: FontFamilies.exo2),
+    bodyLarge: TextStyle(fontSize: 16.0, fontFamily: FontFamilies.exo2),
+    bodyMedium: TextStyle(fontFamily: FontFamilies.exo2, fontSize: 13),
+    bodySmall: TextStyle(fontFamily: FontFamilies.exo2, fontSize: 12),
   );
 
   static ThemeData lightTheme = ThemeData(

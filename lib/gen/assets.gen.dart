@@ -18,16 +18,6 @@ class $LibGen {
   $LibSrcGen get src => const $LibSrcGen();
 }
 
-class $AssetsFontsGen {
-  const $AssetsFontsGen();
-
-  /// File path: assets/fonts/.gitignore
-  String get aGitignore => 'assets/fonts/.gitignore';
-
-  /// List of all assets
-  List<String> get values => [aGitignore];
-}
-
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -48,20 +38,25 @@ class $AssetsImagesGen {
   AssetGenImage get albumCover =>
       const AssetGenImage('assets/images/album_cover.JPG');
 
+  /// File path: assets/images/dozhinki.png
+  AssetGenImage get dozhinki =>
+      const AssetGenImage('assets/images/dozhinki.png');
+
   /// File path: assets/images/komorebi_text.png
   AssetGenImage get komorebiText =>
       const AssetGenImage('assets/images/komorebi_text.png');
 
-  /// File path: assets/images/komorebi_text_big.png
-  AssetGenImage get komorebiTextBig =>
-      const AssetGenImage('assets/images/komorebi_text_big.png');
+  /// File path: assets/images/nie_potrzebuje_cie_tu.PNG
+  AssetGenImage get niePotrzebujeCieTu =>
+      const AssetGenImage('assets/images/nie_potrzebuje_cie_tu.PNG');
 
   /// List of all assets
   List<dynamic> get values => [
     aGitignore,
     albumCover,
+    dozhinki,
     komorebiText,
-    komorebiTextBig,
+    niePotrzebujeCieTu,
   ];
 }
 
@@ -88,7 +83,6 @@ class $LibSrcLocalizationGen {
 class Assets {
   const Assets._();
 
-  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $LibGen lib = $LibGen();

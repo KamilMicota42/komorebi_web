@@ -1,4 +1,3 @@
 class FontFamilies {
-  static String titilliumWeb = 'TitilliumWeb';
-  static String zenLoop = 'ZenLoop';
+  static String exo2 = 'Exo2';
 }
