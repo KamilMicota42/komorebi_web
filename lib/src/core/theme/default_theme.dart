@@ -30,6 +30,7 @@ class DefaultTheme {
         boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5.0, offset: Offset(0, 3), spreadRadius: 2.0)],
       ),
     ),
+    primaryColor: AppColors.leafGreen,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -50,5 +51,6 @@ class DefaultTheme {
         boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 5.0, offset: Offset(0, 3), spreadRadius: 2.0)],
       ),
     ),
+    primaryColor: AppColors.leafGreen,
   );
 }
