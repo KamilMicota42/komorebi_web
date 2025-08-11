@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  custom_mouse_cursor
   url_launcher_linux
 )
 

@@ -1,12 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:komorebi_web/routing/app_router.dart';
 import 'package:komorebi_web/src/core/di/injection.dart';
 import 'package:komorebi_web/src/core/theme/default_theme.dart';
 import 'package:komorebi_web/src/core/utils/methods/show_snack_bar.dart';
-import 'package:komorebi_web/src/features/settings/cubit/theme_mode/theme_mode_cubit.dart';
 import 'package:sizer/sizer.dart';
 
 void main() async {
@@ -16,7 +14,7 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('pl')],
-      path: 'assets/translations',
+      path: 'lib/src/localization',
       fallbackLocale: const Locale('pl'),
       startLocale: const Locale('pl'), // default language
       child: const MyApp(),
@@ -30,25 +28,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final appRouter = getIt<AppRouter>();
-    return BlocBuilder<ThemeModeCubit, ThemeModeState>(
-      bloc: getIt<ThemeModeCubit>(),
-      builder: (context, ThemeModeState state) {
-        ThemeMode themeMode = state.when(systemMode: () => ThemeMode.system, lightMode: () => ThemeMode.light, darkMode: () => ThemeMode.dark);
-        return Sizer(
-          builder: (context, orientation, deviceType) {
-            return MaterialApp.router(
-              theme: DefaultTheme.lightTheme,
-              darkTheme: DefaultTheme.darkTheme,
-              themeMode: themeMode,
-              debugShowCheckedModeBanner: false,
-              routerDelegate: appRouter.delegate(),
-              routeInformationParser: appRouter.defaultRouteParser(),
-              scaffoldMessengerKey: snackbarKey,
-              localizationsDelegates: context.localizationDelegates,
-              supportedLocales: context.supportedLocales,
-              locale: context.locale,
-            );
-          },
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp.router(
+          theme: DefaultTheme.lightTheme,
+          darkTheme: DefaultTheme.darkTheme,
+          debugShowCheckedModeBanner: false,
+          routerDelegate: appRouter.delegate(),
+          routeInformationParser: appRouter.defaultRouteParser(),
+          scaffoldMessengerKey: snackbarKey,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          themeMode: ThemeMode.light,
         );
       },
     );

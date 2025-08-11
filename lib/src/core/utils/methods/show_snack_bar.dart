@@ -12,7 +12,7 @@ void showSnackBar(String text) {
         text,
         style: TextStyle(fontFamily: FontFamilies.titilliumWeb, fontSize: 16, fontWeight: FontWeight.normal, color: AppColors.white),
       ),
-      backgroundColor: AppColors.black,
+      backgroundColor: AppColors.leafGreen,
       behavior: SnackBarBehavior.floating,
       elevation: 6,
     ),
